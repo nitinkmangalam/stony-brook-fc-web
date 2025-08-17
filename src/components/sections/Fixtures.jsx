@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '../ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../ui/tabs';
 import { Alert, AlertDescription } from '../ui/alert';
 import moment from 'moment';
+import {API_BASE_URL} from "../../apiConfig";
 
 const FixturesTable = ({ matches, title }) => (
   <Card>

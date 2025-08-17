@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '../ui/card';
 import TournamentProgressCard from '../ui/tournament_progress';
 import { Alert, AlertDescription } from '../ui/alert';
 import { Trophy, Goal, Activity, Star, TrendingUp, Shield, Lock } from 'lucide-react';
+import {API_BASE_URL} from "../../apiConfig";
 
 export const Overview = () => {
   const [loading, setLoading] = useState(true);

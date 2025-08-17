@@ -6,6 +6,7 @@ import { Fixtures } from './sections/Fixtures';
 import { Standings } from './sections/Standings';
 import { Admin } from './sections/Admin';
 import { Alert, AlertDescription } from './ui/alert';
+import {API_BASE_URL} from "../apiConfig";
 
 const TournamentDashboard = () => {
   const [loading, setLoading] = useState(true);

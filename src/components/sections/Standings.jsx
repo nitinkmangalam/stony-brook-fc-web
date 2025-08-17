@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '../ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../ui/tabs';
 import { Alert, AlertDescription } from '../ui/alert';
+import {API_BASE_URL} from "../../apiConfig";
 
 const StandingsTable = ({ standings, title }) => (
   <Card>

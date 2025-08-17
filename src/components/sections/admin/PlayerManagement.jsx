@@ -18,6 +18,7 @@ import { Button } from '../../ui/button';
 import { Input } from '../../ui/input';
 import { PlusCircle, Pencil, Trash2 } from 'lucide-react';
 import { Alert, AlertDescription } from '../../ui/alert';
+import {API_BASE_URL} from "../../../apiConfig";
 
 export const PlayerManagement = () => {
   const [players, setPlayers] = useState([]);

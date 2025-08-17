@@ -26,6 +26,7 @@ import {
 } from '../../ui/select';
 import { Alert, AlertDescription } from '../../ui/alert';
 import { PlusCircle, Pencil, Trash2, Calendar, Trophy, Save, X } from 'lucide-react';
+import {API_BASE_URL} from "../../../apiConfig";
 
 const ROUNDS = ['Round 1', 'Round 2', 'Knockouts'];
 const MATCH_TYPES = ['1v1', '2v2'];
