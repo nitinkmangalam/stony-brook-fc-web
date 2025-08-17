@@ -79,7 +79,7 @@ export const Fixtures = () => {
   useEffect(() => {
     const fetchFixturesAndResults = async () => {
       try {
-        const response = await fetch('http://localhost:8000/matches');
+        const response = await fetch(`${API_BASE_URL}/matches`);
         if (!response.ok) {
           throw new Error('Failed to fetch matches');
         }

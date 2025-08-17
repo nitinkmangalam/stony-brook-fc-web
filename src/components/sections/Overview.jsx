@@ -12,7 +12,7 @@ export const Overview = () => {
   useEffect(() => {
     const fetchOverviewData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/overview');
+        const response = await fetch(`${API_BASE_URL}/overview`);
         if (!response.ok) {
           throw new Error('Failed to fetch overview data');
         }

@@ -61,8 +61,8 @@ export const MatchManagement = () => {
   const fetchData = async () => {
     try {
       const [matchesRes, playersRes] = await Promise.all([
-        fetch('http://localhost:8000/matches'),
-        fetch('http://localhost:8000/players')
+        fetch(`${API_BASE_URL}/matches`),
+        fetch(`${API_BASE_URL}/players`)
       ]);
 
       if (!matchesRes.ok || !playersRes.ok) {
@@ -203,8 +203,8 @@ export const MatchManagement = () => {
       console.log('Formatted submit data:', submitData);
 
       const url = matchData.id 
-        ? `http://localhost:8000/matches/${matchData.id}` 
-        : 'http://localhost:8000/matches';
+        ? `${API_BASE_URL}/matches/${matchData.id}`
+        : `${API_BASE_URL}/matches`;
 
       const response = await fetch(url, {
         method: matchData.id ? 'PUT' : 'POST',
@@ -233,7 +233,7 @@ export const MatchManagement = () => {
     if (!window.confirm('Are you sure you want to delete this match?')) return;
 
     try {
-      const response = await fetch(`http://localhost:8000/matches/${matchId}`, {
+      const response = await fetch(`${API_BASE_URL}/matches/${matchId}`, {
         method: 'DELETE',
       });
 
@@ -249,7 +249,7 @@ export const MatchManagement = () => {
 
   const handleMatchUpdate = async (matchId, updatedData) => {
     try {
-      const response = await fetch(`http://localhost:8000/matches/${matchId}`, {
+      const response = await fetch(`${API_BASE_URL}/matches/${matchId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -59,8 +59,8 @@ export const MatchManagement = () => {
   const fetchData = async () => {
     try {
       const [matchesRes, playersRes] = await Promise.all([
-        fetch('http://localhost:8000/matches'),
-        fetch('http://localhost:8000/players')
+        fetch(`${API_BASE_URL}/matches`),
+        fetch(`${API_BASE_URL}/players`)
       ]);
 
       if (!matchesRes.ok || !playersRes.ok) {
@@ -160,8 +160,8 @@ export const MatchManagement = () => {
       console.log('Submitting match data:', matchData);
 
       const url = matchData.id 
-        ? `http://localhost:8000/matches/${matchData.id}` 
-        : 'http://localhost:8000/matches';
+        ? `${API_BASE_URL}/matches/${matchData.id}`
+        : `${API_BASE_URL}/matches`;
 
       // Ensure all numeric fields are properly converted
       const submitData = {
@@ -213,7 +213,7 @@ export const MatchManagement = () => {
     if (!window.confirm('Are you sure you want to delete this match?')) return;
 
     try {
-      const response = await fetch(`http://localhost:8000/matches/${matchId}`, {
+      const response = await fetch(`${API_BASE_URL}/matches/${matchId}`, {
         method: 'DELETE',
       });
 

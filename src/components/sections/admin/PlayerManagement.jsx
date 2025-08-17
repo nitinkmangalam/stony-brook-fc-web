@@ -28,7 +28,7 @@ export const PlayerManagement = () => {
 
   const fetchPlayers = async () => {
     try {
-      const response = await fetch('http://localhost:8000/players');
+      const response = await fetch(`${API_BASE_URL}/players`);
       if (!response.ok) throw new Error('Failed to fetch players');
       const data = await response.json();
       setPlayers(data);
@@ -47,7 +47,7 @@ export const PlayerManagement = () => {
     if (!newPlayerName.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:8000/players', {
+      const response = await fetch(`${API_BASE_URL}/players`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export const PlayerManagement = () => {
 
   const handleUpdatePlayer = async (playerId, updatedName) => {
     try {
-      const response = await fetch(`http://localhost:8000/players/${playerId}`, {
+      const response = await fetch(`${API_BASE_URL}/players/${playerId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export const PlayerManagement = () => {
     if (!window.confirm('Are you sure you want to delete this player?')) return;
 
     try {
-      const response = await fetch(`http://localhost:8000/players/${playerId}`, {
+      const response = await fetch(`${API_BASE_URL}/players/${playerId}`, {
         method: 'DELETE',
       });
 

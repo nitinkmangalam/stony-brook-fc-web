@@ -55,7 +55,7 @@ export const Standings = () => {
   useEffect(() => {
     const fetchStandings = async () => {
       try {
-        const response = await fetch('http://localhost:8000/standings');
+        const response = await fetch(`${API_BASE_URL}/standings`);
         if (!response.ok) {
           throw new Error('Failed to fetch standings');
         }
